@@ -1,0 +1,62 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+#container {
+    width: 20vw;
+    height: 20vh;
+}
+
+.sections {
+    width: 100vw;
+    height: 80vh;
+    border: 1px solid red;
+}
+
+#foot {
+    width: 100vw;
+    height: 10vh;
+    background-color: cadetblue;
+}
+
+#nav__cont {
+    width: 100vw; 
+    height: 10vh; 
+    background: gray;
+    display: flex;
+    gap: 1.5vw;
+    align-items: center;
+    position: fixed;
+}
+
+#nav__cont>ul {
+    list-style: none;
+    color: azure;
+    padding-left:1vw ;
+    display: flex;
+    gap: 1vw;
+
+}
+
+#nav__cont>ul>li {
+    border: 1px solid #fff;
+
+}
+#nav__cont>ul>li>a {
+    text-decoration: none;
+}
+
+#nav__cont>ul>li>a:visited {
+    color: aqua;
+}
+
+#nav__cont>ul>li>a:focus {
+    color: red;
+}
+
+#nav__cont>ul>li>a:link {
+    color: #fff;
+}
+html {
+    scroll-behavior: smooth;
+}
