@@ -55,19 +55,22 @@ while (age < 40){
     console.log("you are " + age + " not a baby anymore");
     age =age  + 1;
 }*/
+
 /*testing the for loop*/
 
-/*for (i=0; i< 10; i++){
-  console.log("*...* " + i);
-};*/
+// for (i=0; i< 10; i++){
+//   console.log("*...* " + i);
+// };
 
 /*testing the nested for loop*/
-/*for (i=0; i<10; i++){
-  for(j=0; j<10; j++){
-    console.log(i + " *..* " + j)
-  }
-  console.log("this for loop round number " + i + " is done");
-};
+// for (i=0; i<10; i++){
+//   for(j=0; j<10; j++){
+//     console.log(i + " *..* " + j)
+//   }
+//   console.log("this for loop round number " + i + " is done");
+// };
+
+
 /*
 function myFunc(){};
 

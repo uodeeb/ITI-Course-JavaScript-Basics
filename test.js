@@ -166,27 +166,277 @@ if(num > 15){
 }
 
 // ATM machine example
-var pass = 1234;
-var balance = 1000;
+// var pass = 1234;
+// var balance = 1000;
 
-var pin = prompt("Enter your password");
-var date = prompt("Enter today's date");
-if(pin == pass && date < 30){
-    //true statement
-    console.log("welcome", "your account balance is ", balance)
-    var amount = prompt("Enter amount to withdraw");
-    if(amount <= balance ){
-        balance = balance - amount;
-        console.log("please collect your cash", "you have ", amount)
-        console.log("your account balance is ", balance)
-    }else{
-        console.log("insufficient balance")
-    }
-}else if(pin == pass && date == 30){
-    console.log("Sorry!", "Withdraw is not allowed on this day")
+// var pin = prompt("Enter your password");
+// var date = prompt("Enter today's date");
+// if(pin == pass && date < 30){
+//     //true statement
+//     console.log("welcome", "your account balance is ", balance)
+//     var amount = prompt("Enter amount to withdraw");
+//     if(amount <= balance ){
+//         balance = balance - amount;
+//         console.log("please collect your cash", "you have ", amount)
+//         console.log("your account balance is ", balance)
+//     }else{
+//         console.log("insufficient balance")
+//     }
+// }else if(pin == pass && date == 30){
+//     console.log("Sorry!", "Withdraw is not allowed on this day")
 
-}else{
-    //false statement
-    console.log("wrong password", "please try again")
+// }else{
+//     //false statement
+//     console.log("wrong password", "please try again")
+// }
+
+// while loop
+var i = 10;
+while(i > 5){
+    // executed code 
+    console.log(i)
+
+    // increment, update
+    //i = i + 1;
+    i--
 }
 
+// for loop
+for(var i = 0; i < 5; i++){
+    console.log(i)
+}
+
+
+// Global scope
+let globalVariable = "I am global";
+
+function myFunction() {
+  // Function scope
+  let functionVariable = "I am local";
+  console.log(globalVariable); // Accessible
+  console.log(functionVariable); // Accessible
+
+  if (true) {
+    // Block scope
+    let blockVariable = "I am block scoped";
+    console.log(blockVariable); // Accessible
+  }
+   //console.log(blockVariable); // ReferenceError: blockVariable is not defined
+}
+
+myFunction();
+console.log(globalVariable); // Accessible
+//console.log(functionVariable); // ReferenceError: functionVariable is not defined
+
+
+// hoisting
+
+console.log(x); // What will be the output?
+var x = 10;
+console.log(x); 
+function myFunction01() {
+  console.log(y); // What will be the output?
+  var y = 20;
+}
+
+myFunction01();
+
+// var vs let
+// Using var
+var message = "Hello";
+if (true) {
+  var message = "World"; // Redeclaration allowed, but can lead to confusion
+  console.log(message); // Output: "World"
+}
+console.log(message); // Output: "World"
+
+// Using let
+let greeting = "Hello";
+if (true) {
+  let greeting = "World"; // New variable in a new scope
+  console.log(greeting); // Output: "World"
+}
+console.log(greeting); // Output: "Hello"
+
+/*
+Coding Exercise 1: Simple Calculator
+
+Description:
+Build a basic calculator that performs arithmetic operations (addition, subtraction, multiplication, and division) on two numbers.
+Concepts Covered:
+
+1. Variables
+2. Arithmetic operators
+3. User input (prompt)
+4. Conditional statements (if/else)
+
+Real-life Problem:
+This exercise simulates a simple calculator application, which is a fundamental tool for performing basic calculations.
+
+Steps to Solution:
+1. Prompt the user to enter two numbers and the desired operation.
+2. Convert the input strings to numbers using parseInt.
+3. Use conditional statements to determine the operation based on the user's input.
+4. Perform the calculation and store the result.
+5. Display the result to the user.
+
+*/
+
+// truthy and falsy values
+
+// falsy values
+
+// 0
+console.log(0 == false)
+if(!0){
+    console.log("true")
+}
+
+// ""
+console.log("" == false)
+if(!""){
+    console.log("true")
+}
+
+// undefined
+console.log(undefined == false)
+// null
+console.log(null == false)
+// NaN
+console.log(NaN == false)
+
+// working with array and loops
+
+var arr = ["item01", "item02", "item03", "item04", "item05"];
+
+for(var i = 0; i < arr.length; i++){   
+    console.log(i, arr[i])
+
+}
+
+// for of
+for( item of arr){
+    // item refers to the array items
+    console.log(item)  
+
+}
+
+// for in
+for( item in arr){
+    //item refers to the array index
+    console.log(item)
+
+}
+
+// array of objects
+var itemsArr = [
+    {
+        name: "item01",
+        price: 100
+    },
+    {
+        name: "item02",
+        price: 200
+    },
+    {
+        name: "item03",
+        price: 300
+    },
+    {
+        name: "item04",
+        price: 400
+    },
+    {
+        name: "item05",
+        price: 500
+    },
+]
+
+// build a function to log each item beside the price
+
+function logItem(arrOfItems){
+    // loop through the array
+    for(item of arrOfItems){
+        if(item.price > 200){
+        console.log("This is " + item.name, "and its price is " + item.price)
+    }
+}
+}
+logItem(itemsArr)
+
+
+/*
+----------------school project--------------------
+build a function to match each teacher with a specific 
+group of students and a specific subject
+
+- list of teachers
+- list of students
+- list of subjects
+- list of classes
+
+- Output
+"Student + student.name + is in class + teacher.name + in subject + subject.name"
+
+*/
+
+let teachersList = [
+    {
+        name: "Ahmed",  
+        subject: "Math",
+        group: "Group 1"           
+    },
+    {
+        name: "Mohamed",  
+        subject: "English",
+        group: "Group 2"           
+    },
+    {
+        name: "Sayed",  
+        subject: "Science",
+        group: "Group 3"           
+    }
+
+]
+
+let studentsList = [
+    {
+        name: "Ahmed",  
+        group: "Group 1"    
+    },
+    {
+        name: "Mohamed",  
+        group: "Group 2"    
+    },
+    {
+        name: "Sayed",  
+        group: "Group 3"    
+    }
+]
+
+let subjectsList = [
+    {
+        name: "Math",  
+    },
+    {
+        name: "English",  
+    },
+    {
+        name: "Science",  
+    }
+]
+
+let classesList = [
+    {
+        teacher: "Ahmed",
+        subject: "Math",    
+    },
+    {
+        teacher: "Mohamed",
+        subject: "English",    
+    },
+    {
+        teacher: "Sayed",
+        subject: "Science",    
+    }
+]
